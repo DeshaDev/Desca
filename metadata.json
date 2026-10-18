@@ -1,0 +1,6 @@
+{
+  "name": "بصيرة | منصة تقييم عسر القراءة والديسكالكوليا بتتبع العين",
+  "description": "منصة عربية متطورة مماثلة لـ Lexplore للكشف المبكر عن عسر القراءة (الديسلكسيا) وعسر الحساب (الديسكالكوليا) عبر تتبع حركة العين بالذكاء الاصطناعي وتحسين تجربة القراءة.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

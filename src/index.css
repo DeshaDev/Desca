@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Readex Pro', 'IBM Plex Sans Arabic', sans-serif;
+    --font-sans: 'IBM Plex Sans Arabic', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'IBM Plex Sans Arabic', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-opendyslexic {
+    font-family: 'OpenDyslexic', 'Readex Pro', 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 600;
+    text-underline-offset: 6px;
+  }
+}
+

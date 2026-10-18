@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var isBenign = function (args) {
+          if (!args || !args.length) return false;
+          var s = Array.prototype.slice
+            .call(args)
+            .map(function (a) {
+              return typeof a === 'string' ? a : a && a.message ? a.message : '';
+            })
+            .join(' ');
+          return (
+            s.indexOf('TensorFlow Lite') !== -1 ||
+            s.indexOf('XNNPACK') !== -1 ||
+            s.indexOf('INFO:') !== -1 ||
+            s.indexOf('absl::InitializeLog') !== -1 ||
+            s.indexOf('gl_context') !== -1
+          );
+        };
+        var origErr = console.error;
+        console.error = function () {
+          if (isBenign(arguments)) return;
+          return origErr.apply(console, arguments);
+        };
+        var origWarn = console.warn;
+        console.warn = function () {
+          if (isBenign(arguments)) return;
+          return origWarn.apply(console, arguments);
+        };
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بصيرة | منصة تقييم عسر القراءة والديسكالكوليا بتتبع العين</title>
+    <meta name="description" content="منصة عربية متطورة مماثلة لـ Lexplore للكشف المبكر عن عسر القراءة (الديسلكسيا) وعسر الحساب (الديسكالكوليا) عبر تتبع حركة العين بالذكاء الاصطناعي وتحسين تجربة القراءة." />
+    <meta property="og:title" content="بصيرة | منصة تقييم عسر القراءة والديسكالكوليا بتتبع العين" />
+    <meta property="og:description" content="منصة عربية متطورة مماثلة لـ Lexplore للكشف المبكر عن عسر القراءة (الديسلكسيا) وعسر الحساب (الديسكالكوليا) عبر تتبع حركة العين بالذكاء الاصطناعي وتحسين تجربة القراءة." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet" />
+  </head>
+  <body class="bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-[#0284C7]/15 selection:text-[#0284C7]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
